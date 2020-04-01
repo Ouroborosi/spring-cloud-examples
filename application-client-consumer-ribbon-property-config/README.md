@@ -67,7 +67,7 @@ ribbon:
 
 # Usage
 1. start up eureka-server-basic
-2. start up application-client-consumer-ribbon-java-config
+2. start up application-client-consumer-ribbon-property-config
 3. start up application-service-provider with peer1 profile
 4. start up application-service-provider with peer2 profile
 
