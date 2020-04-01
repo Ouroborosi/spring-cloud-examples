@@ -14,7 +14,7 @@ dependencies {
 ## Configuration
 There's no need to use _@EnableDiscoveryClient_ or _@EnableEurekaClient_ annotation since Spring Cloud Edgware.
 
-Add _@LoadBalanced_ annotation on RestTemplate bean to enable Robbin load balancer.
+Add _@LoadBalanced_ annotation on RestTemplate bean to enable Ribbon load balancer.
 ```java
     @Bean
     @LoadBalanced
