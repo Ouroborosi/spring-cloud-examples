@@ -5,4 +5,6 @@ include ':application-service-provider',
         ':eureka-server-authenticating',
         ':application-service-provider-authenticating',
         ':application-client-consumer-authenticating',
-        ':application-client-consumer-ribbon'
+        ':application-client-consumer-ribbon',
+        ':application-client-consumer-ribbon-java-config',
+        ':application-client-consumer-ribbon-property-config'
