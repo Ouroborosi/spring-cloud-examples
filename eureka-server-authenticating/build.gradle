@@ -1,0 +1,12 @@
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation eurekaServerDependencies.spingBootStarterWebVersion
+    implementation eurekaServerDependencies.springBootStarterSecurityVersion
+    implementation eurekaServerDependencies.eurekaServerVersion
+}
+
+// Define the main class for the application
+mainClassName = 'eureka.server.authenticating.App'

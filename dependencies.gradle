@@ -1,0 +1,29 @@
+ext {
+    springCloudVersion = "Hoxton.SR3"
+
+    mavenBomDependencies = [
+            springCloudDependenciesVersion:        "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    ]
+
+    applicationServiceProviderDependencies = [
+            spingBootStarterWebVersion:            "org.springframework.boot:spring-boot-starter-web",
+            spingBootStarterActuatorVersion:       "org.springframework.boot:spring-boot-starter-actuator",
+            springBootStarterJPAVersion:           "org.springframework.boot:spring-boot-starter-data-jpa",
+            h2DatabaseVersion:                     "com.h2database:h2",
+            lombokVersion:                         "org.projectlombok:lombok",
+            eurekaClientVersion:                   "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client"
+    ]
+
+    applicationClientConsumerDependencies = [
+            spingBootStarterWebVersion:            "org.springframework.boot:spring-boot-starter-web",
+            spingBootStarterActuatorVersion:       "org.springframework.boot:spring-boot-starter-actuator",
+            lombokVersion:                         "org.projectlombok:lombok",
+            eurekaClientVersion:                   "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client"
+    ]
+
+    eurekaServerDependencies = [
+            spingBootStarterWebVersion:            "org.springframework.boot:spring-boot-starter-web",
+            springBootStarterSecurityVersion:       "org.springframework.boot:spring-boot-starter-security",
+            eurekaServerVersion:                   "org.springframework.cloud:spring-cloud-starter-netflix-eureka-server"
+    ]
+}

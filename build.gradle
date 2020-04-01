@@ -1,0 +1,30 @@
+/*
+ * This is root project for spring-cloud eureka examples
+ *
+ * This is a general purpose Gradle build which contains plugins and dependencies for all included modules
+ */
+plugins {
+    id 'org.springframework.boot' version "2.2.6.RELEASE"
+}
+
+apply from: 'dependencies.gradle'
+
+repositories {
+    jcenter()
+}
+
+subprojects {
+    apply plugin: "application"
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: "org.springframework.boot"
+
+    dependencyManagement {
+        imports {
+            mavenBom mavenBomDependencies.springCloudDependenciesVersion
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

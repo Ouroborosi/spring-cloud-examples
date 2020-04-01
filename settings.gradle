@@ -1,0 +1,8 @@
+include ':application-service-provider',
+        ':application-client-consumer',
+        ':eureka-server-basic',
+        ':eureka-server-ha',
+        ':eureka-server-authenticating',
+        ':application-service-provider-authenticating',
+        ':application-client-consumer-authenticating',
+        ':application-client-consumer-ribbon'

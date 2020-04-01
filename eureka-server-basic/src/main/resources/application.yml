@@ -1,0 +1,10 @@
+server:
+  port: 8761
+eureka:
+  client:
+    # register instance to other Eureka Server
+    register-with-eureka: false
+    # sync data with other Eureka Server
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

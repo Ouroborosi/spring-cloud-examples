@@ -1,0 +1,11 @@
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation eurekaServerDependencies.spingBootStarterWebVersion
+    implementation eurekaServerDependencies.eurekaServerVersion
+}
+
+// Define the main class for the application
+mainClassName = 'eureka.server.basic.App'
