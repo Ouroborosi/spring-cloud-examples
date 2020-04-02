@@ -59,7 +59,7 @@ public class AppRibbonConfig {
 ```
 
 ### Beware!!!
-The customizing configuration must be a @Configuration class, but take care that it is not in a @ComponentScan for the main application context.
+Do not add @Configuration on customizing configuration class. It shouldn't be scanned through the component scan. Otherwise, the configuration would apply to all microservices' client instead the specific client.
 ```java
 // This package is not under the application context scan package
 package application.client.config;
