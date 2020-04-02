@@ -1,0 +1,15 @@
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation applicationClientConsumerDependencies.spingBootStarterWebVersion
+    implementation applicationClientConsumerDependencies.spingBootStarterActuatorVersion
+    implementation applicationClientConsumerDependencies.eurekaClientVersion
+    implementation applicationClientConsumerDependencies.openFeignVersion
+    compileOnly applicationClientConsumerDependencies.lombokVersion
+    annotationProcessor applicationClientConsumerDependencies.lombokVersion
+}
+
+// Define the main class for the application
+mainClassName = 'application.client.consumer.App'

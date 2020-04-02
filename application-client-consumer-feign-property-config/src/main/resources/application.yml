@@ -1,0 +1,29 @@
+server:
+  port: 8010
+
+spring:
+  application:
+    # register name on eureka server
+    name: application-client-consumer
+
+logging:
+  level:
+    # !!Beware: Feign logger only response for debug level
+    application.client.consumer.feign: debug
+
+eureka:
+  client:
+    service-url:
+      # eureka server url (aware the slash in the end can't be ignored)
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    # register IP address on eureka server (default is false, and will register host name instead)
+    prefer-ip-address: true
+
+feign:
+  client:
+    config:
+      # feign client name
+      application-service-provider:
+        loggerLeve: full
+        contract: feign.Contract.Default

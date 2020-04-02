@@ -7,4 +7,7 @@ include ':application-service-provider',
         ':application-client-consumer-authenticating',
         ':application-client-consumer-ribbon',
         ':application-client-consumer-ribbon-java-config',
-        ':application-client-consumer-ribbon-property-config'
+        ':application-client-consumer-ribbon-property-config',
+        ':application-client-consumer-feign',
+        ':application-client-consumer-feign-java-config',
+        ':application-client-consumer-feign-property-config'

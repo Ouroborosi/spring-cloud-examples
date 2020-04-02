@@ -18,7 +18,8 @@ ext {
             spingBootStarterWebVersion:            "org.springframework.boot:spring-boot-starter-web",
             spingBootStarterActuatorVersion:       "org.springframework.boot:spring-boot-starter-actuator",
             lombokVersion:                         "org.projectlombok:lombok",
-            eurekaClientVersion:                   "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client"
+            eurekaClientVersion:                   "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client",
+            openFeignVersion:                      "org.springframework.cloud:spring-cloud-starter-openfeign"
     ]
 
     eurekaServerDependencies = [
