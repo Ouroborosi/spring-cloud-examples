@@ -1,0 +1,16 @@
+server:
+  port: 8010
+
+spring:
+  application:
+    # register name on eureka server
+    name: application-client-consumer
+
+logging:
+  level:
+    application.client.consumer: info
+
+# Ribbon client name
+application-service-provider:
+  ribbon:
+    listOfServers: localhost:8000,localhost:8001

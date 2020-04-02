@@ -19,6 +19,7 @@ ext {
             spingBootStarterActuatorVersion:       "org.springframework.boot:spring-boot-starter-actuator",
             lombokVersion:                         "org.projectlombok:lombok",
             eurekaClientVersion:                   "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client",
+            ribbonVersion:                         "org.springframework.cloud:spring-cloud-starter-netflix-ribbon",
             openFeignVersion:                      "org.springframework.cloud:spring-cloud-starter-openfeign"
     ]
 
