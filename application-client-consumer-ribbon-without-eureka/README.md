@@ -14,8 +14,6 @@ dependencies {
 }
 ```
 ## Configuration
-There's no need to use _@EnableDiscoveryClient_ or _@EnableEurekaClient_ annotation since Spring Cloud Edgware.
-
 Add _listOfServices_ to define the service provider's location.
 ```yaml
 # Ribbon client name 
@@ -63,10 +61,9 @@ public class ConsumerController {
 ```
 
 # Usage
-1. start up eureka-server-basic
-2. start up application-client-consumer-ribbon-without-eureka
-3. start up application-service-provider with peer1 profile
-4. start up application-service-provider with peer2 profile
+1. start up application-client-consumer-ribbon-without-eureka
+2. start up application-service-provider with peer1 profile
+3. start up application-service-provider with peer2 profile
 
 The application-service-provider would create 4 user and the id is 1~4.
 
