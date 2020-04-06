@@ -1,7 +1,3 @@
-repositories {
-    jcenter()
-}
-
 dependencies {
     implementation eurekaServerDependencies.spingBootStarterWebVersion
     implementation eurekaServerDependencies.eurekaServerVersion
