@@ -1,3 +1,4 @@
+rootProject.name = 'spring-cloud-eureka-examples'
 include ':application-service-provider',
         ':application-client-consumer',
         ':eureka-server-basic',
@@ -11,4 +12,6 @@ include ':application-service-provider',
         ':application-client-consumer-ribbon-without-eureka',
         ':application-client-consumer-feign',
         ':application-client-consumer-feign-java-config',
-        ':application-client-consumer-feign-property-config'
+        ':application-client-consumer-feign-property-config',
+        ':application-service-provider-with-api-auth',
+        ':application-client-consumer-feign-manual'

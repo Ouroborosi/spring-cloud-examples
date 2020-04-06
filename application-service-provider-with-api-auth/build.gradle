@@ -1,0 +1,17 @@
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation applicationServiceProviderDependencies.spingBootStarterWebVersion
+    implementation applicationServiceProviderDependencies.spingBootStarterActuatorVersion
+    implementation applicationServiceProviderDependencies.springBootStarterJPAVersion
+    implementation applicationServiceProviderDependencies.springBootStarterSecurityVersion
+    implementation applicationServiceProviderDependencies.h2DatabaseVersion
+    implementation applicationServiceProviderDependencies.eurekaClientVersion
+    compileOnly applicationServiceProviderDependencies.lombokVersion
+    annotationProcessor applicationServiceProviderDependencies.lombokVersion
+}
+
+// Define the main class for the application
+mainClassName = "application.service.provider.App"
