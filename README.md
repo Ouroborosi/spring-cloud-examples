@@ -45,7 +45,7 @@ Self preservation is enabled by default, and the default threshold for enabling 
 ### High Availability
 1. [eureka-server-ha](eureka-server-ha/README.md)
 
-# Client-Side Load Balancing - Ribbon
+# Client-Side Load Balancer - Ribbon
 
 ## Ribbon Tutorials
 ### Basic
@@ -58,7 +58,7 @@ Self preservation is enabled by default, and the default threshold for enabling 
 ### Ribbon without Eureka
 1. [application-client-consumer-ribbon-without-eureka](application-client-consumer-ribbon-without-eureka/README.md)
 
-# REST Client - Feign
+# Declarative REST Client - Feign
 
 ## Feign Tutorials
 ### Basic
