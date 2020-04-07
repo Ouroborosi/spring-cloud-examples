@@ -25,5 +25,5 @@ feign:
     config:
       # feign client name
       application-service-provider:
-        loggerLeve: full
+        loggerLevel: full
         contract: feign.Contract.Default
