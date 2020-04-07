@@ -1,7 +1,8 @@
 # Ribbon without Eureka Server
-The example is using Spring Cloud Hoxton SR3
+_The example is using Spring Cloud Hoxton SR3_
 
 Build an application use Ribbon load balancer, but without service discovery.
+![image](../images/Ribbon%20without%20Eureka.png)
 
 ## Preparation
 - Gradle set up Spring Boot release trains plugin.
@@ -14,7 +15,7 @@ dependencies {
 }
 ```
 ## Configuration
-Add _listOfServices_ to define the service provider's location.
+Add `listOfServices` to define the service provider's location.
 ```yaml
 # Ribbon client name 
 application-service-provider:
@@ -22,9 +23,10 @@ application-service-provider:
     listOfServers: peer1:8000,peer2:8010
 ```
 
-**Beware!!!** <br>
-Do not add _@LoadBalanced_ annotation on RestTemplate bean if trying to use Ribbon without Eureka.
-After add _@LoadBalanced_ the RestTemplate will run ```RibbonLoadBalancerClient``` to check the service id on Eureka.
+**Beware!!!**
+
+Do not add `@LoadBalanced` annotation on RestTemplate bean if trying to use Ribbon without Eureka.
+After add `@LoadBalanced` the RestTemplate will run `RibbonLoadBalancerClient` to check the service id on Eureka.
 ```java
 @SpringBootApplication
 public class App {
@@ -65,10 +67,24 @@ public class ConsumerController {
 2. start up application-service-provider with peer1 profile
 3. start up application-service-provider with peer2 profile
 
-The application-service-provider would create 4 user and the id is 1~4.
+## Data
+The application-service-provider would create 3 users.
 
+| id | username | name | age | balance |
+|---|---|---|---|---|
+| 1 | account1 | Keven | 20 | 100.00 |
+| 2 | account2 | Logan | 28 | 180.00 |
+| 3 | account3 | John | 32 | 280.00 |
+
+# How to Test
 call API on application-client-consumer threw curl command:
 ```shell script
 # curl -X GET http://{application_server_url}:{application_server_port}/order/users/{user_id}
 curl -X GET http://localhost:8010/order/users/1
 ```
+
+### High Availability Testing
+1. Start up Eureka server and services
+2. Invoke REST API on application client(i.e. _`application-client-consumer`_ in this example) and get the response data
+3. Shutdown one of the application service(i.e. _`application-service-provider`_ in this example)
+4. Invoke REST API on application client again and still get the response data successfully

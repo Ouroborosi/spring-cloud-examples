@@ -1,5 +1,5 @@
-# Eureka Server
-The example is using Spring Cloud Hoxton SR3
+# Eureka Server with High Availability
+_The example is using Spring Cloud Hoxton SR3_
 
 ## Preparation
 - Gradle set up Spring Boot release trains plugin.
@@ -11,7 +11,7 @@ It needs to add service name in /hosts file to support localhost HA.
 127.0.0.1 peer1 peer2
 ```
 
-## Dependenices
+## Dependencies
 ```groovy
 dependencies {
     implementation "org.springframework.boot:spring-boot-starter-web"
@@ -19,7 +19,7 @@ dependencies {
 }
 ```
 ## Configuration
-Use _@EnableEurekaServer_ annotation on main class.
+Use `@EnableEurekaServer` annotation on main class.
 ```java
 @SpringBootApplication
 @EnableEurekaServer
@@ -30,7 +30,7 @@ public class App {
 }
 ```
 
-setup the server configuration through _application.yml_
+setup the server configuration through `application.yml`
 ```yaml
 eureka:
   client:
@@ -65,10 +65,8 @@ Though Eureka Server would sync instance information between servers, but in cas
 
 Go to [peer1](http://peer1:8761) and [peer2](http://peer2:8762) to check if all microservices are registerd on both services.
 
-The application-service-provider would create 4 user and the id is 1~4.
-
 call API on application-client-consumer threw curl command:
 ```shell script
-# curl curl -X GET http://{application_server_url}:{application_server_port}/order/users/{user_id}
+# curl -X GET http://{application_server_url}:{application_server_port}/order/users/{user_id}
 curl -X GET http://localhost:8010/order/users/1
 ```

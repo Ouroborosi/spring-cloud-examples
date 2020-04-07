@@ -1,8 +1,8 @@
-# Service Registry - Netflix Eureka
+# Netflix OSS Study
 ## Spring Cloud service discovery
 Spring Cloud service discovery, you can abstract away the physical location (IP and/or server name) of where your servers are deployed from the clients consuming the service. Service consumers invoke business logic for the servers through a logical name rather than a physical location. also handles the registration and deregistration of services instances as they’re started up and shut down.
 
-## Eureka
+## Service Registry - Eureka
 Spring Cloud Eureka also comes from Netflix OSS. The Spring Cloud project provides a Spring-friendly declarative approach for integrating Eureka with Spring-based applications. Eureka can be used for self-registration, dynamic discovery, and load balancing.
 
 ![image](./images/eureka_architecture.png)
@@ -25,11 +25,52 @@ When a microservice is started, it reaches out to the Eureka server, and adverti
 
 Self preservation mode be trigger by a larger than expected number of registered clients have terminated their connections ungracefully. It's done to ensure catastrophic network events do not wipe out eureka registry data, and having this be propagated downstream to all clients.
 
-When in self preservation mode, eureka servers will stop eviction of all instances until either:
+When in self-preservation mode, eureka servers will stop eviction of all instances until either:
 1. the number of heartbeat renewals it sees is back above the expected threshold
-2. self preservation is disabled (see below)
+2. self-preservation is disabled (see below)
 
 Self preservation is enabled by default, and the default threshold for enabling self preservation is > 15% of the current registry size.
+
+## Eureka Tutorials
+### Basic
+1. [eureka-server-basic](eureka-server-basic/README.md)
+2. [application-service-provider](application-service-provider/README.md)
+3. [application-client-consumer](application-client-consumer/README.md)
+
+### Server Authentication
+1. [eureka-server-authenticating](eureka-server-authenticating/README.md)
+2. [application-service-provider-authenticating](application-service-provider-authenticating/README.md)
+3. [application-client-consumer-authenticating](application-client-consumer-authenticating/README.md)
+
+### High Availability
+1. [eureka-server-ha](eureka-server-ha/README.md)
+
+# Client-Side Load Balancing - Ribbon
+
+## Ribbon Tutorials
+### Basic
+1. [application-client-consumer-ribbon](application-client-consumer-ribbon/README.md)
+
+### Customizing Configuration
+1. [application-client-consumer-ribbon-java-config](application-client-consumer-ribbon-java-config/README.md)
+2. [application-client-consumer-ribbon-property-config](application-client-consumer-ribbon-property-config/README.md)
+
+### Ribbon without Eureka
+1. [application-client-consumer-ribbon-without-eureka](application-client-consumer-ribbon-without-eureka/README.md)
+
+# REST Client - Feign
+
+## Feign Tutorials
+### Basic
+1. [application-client-consumer-feign](application-client-consumer-feign/README.md)
+
+### Customizing Configuration
+1. [application-client-consumer-feign-java-config](application-client-consumer-feign-java-config/README.md)
+2. [application-client-consumer-feign-property-config](application-client-consumer-feign-property-config/README.md)
+
+### Feign Clients with authentication
+1. [application-service-provider-with-api-auth](application-service-provider-with-api-auth/README.md)
+2. [application-client-consumer-feign-manual](application-client-consumer-feign-manual/README.md)
 
 ## Example Scenario
 The example has:

@@ -1,5 +1,5 @@
-# Open Feign
-The example is using Spring Cloud Hoxton SR3
+# Customizing Open Feign Client for Application Client with 
+_The example is using Spring Cloud Hoxton SR3_
 
 Feign is integrated with **Eureka** & **Ribbon**, so the microservice is registering itself on Eureka and use the Ribbon load balancer automatically.
 
@@ -9,7 +9,7 @@ This example which creates two Feign Clients with the same interface but configu
 - Gradle set up Spring Boot release trains plugin.
 - Manage the Spring Cloud dependencies with Maven BOM.
 
-## Dependenices
+## Dependencies
 ```groovy
 dependencies {
     implementation "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client"
@@ -31,12 +31,13 @@ public class ConsumerController {
 ```
 
 **Beware!!**
+
 Because the example is using customizing Feign Clients there's no need to add `@FeignClient` on Feign Clients and `@EnableFeignClients` on Spring Boot main class.
 
 ## Customizing Feign Client
 To create Feign clients manually the project is using Feign Builder API.
 
-In this example would create two Feign Clients with the same interface, but configure each one with a separate `BasicAuthRequestInterceptor`.
+In this example would create two Feign Clients with the same interface, but configure each one with a separate `BasicAuthRequestInterceptor`. Please refer the [README](../application-service-provider-with-api-auth/README.md#Authenticated-Users) in application-service-provider-with-api-auth for the HTTP basic auth info.
 ```java
 @Import(FeignClientsConfiguration.class)
 @RequestMapping("/order")
@@ -59,7 +60,6 @@ public class ConsumerController {
     }
 
     // omit...
-
 }
 ```
 > The Feign `Contract` object defines what annotations and values are valid on interfaces. The autowired `Contract` bean provides supports for SpringMVC annotations, instead of the default Feign native annotations.

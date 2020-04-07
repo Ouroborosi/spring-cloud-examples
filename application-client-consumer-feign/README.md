@@ -1,5 +1,5 @@
-# Open Feign
-The example is using Spring Cloud Hoxton SR3
+# Open Feign for Application Client
+_The example is using Spring Cloud Hoxton SR3_
 
 Feign is integrated with **Eureka** & **Ribbon**, so the microservice is registering itself on Eureka and use the Ribbon load balancer automatically.
 
@@ -7,17 +7,18 @@ Feign is integrated with **Eureka** & **Ribbon**, so the microservice is registe
 - Gradle set up Spring Boot release trains plugin.
 - Manage the Spring Cloud dependencies with Maven BOM.
 
-## Dependenices
+## Dependencies
 ```groovy
 dependencies {
     implementation "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client"
     implementation "org.springframework.cloud:spring-cloud-starter-openfeign"
 }
 ```
-## Configuration
-There's no need to use _@EnableDiscoveryClient_ or _@EnableEurekaClient_ annotation since Spring Cloud Edgware.
 
-Add _@EnableFeignClients_ annotation on App class
+## Configuration
+There's no need to use `@EnableDiscoveryClient` or `@EnableEurekaClient` annotation since Spring Cloud Edgware.
+
+Add `@EnableFeignClients` annotation on App class
 ```java
 @SpringBootApplication
 @EnableFeignClients
@@ -49,10 +50,24 @@ public interface UserFeignClient {
 3. start up application-service-provider with peer1 profile
 4. start up application-service-provider with peer2 profile
 
-The application-service-provider would create 4 user and the id is 1~4.
+## Data
+The application-service-provider would create 3 users.
 
+| id | username | name | age | balance |
+|---|---|---|---|---|
+| 1 | account1 | Keven | 20 | 100.00 |
+| 2 | account2 | Logan | 28 | 180.00 |
+| 3 | account3 | John | 32 | 280.00 |
+
+# How to Test
 call API on application-client-consumer threw curl command:
 ```shell script
-# curl curl -X GET http://{application_server_url}:{application_server_port}/order/users/{user_id}
+# curl -X GET http://{application_server_url}:{application_server_port}/order/users/{user_id}
 curl -X GET http://localhost:8010/order/users/1
 ```
+
+### High Availability Testing
+1. Start up Eureka server and services
+2. Invoke REST API on application client(i.e. _`application-client-consumer`_ in this example) and get the response data
+3. Shutdown one of the application service(i.e. _`application-service-provider`_ in this example)
+4. Invoke REST API on application client again and still get the response data successfully

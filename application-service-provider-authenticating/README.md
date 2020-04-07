@@ -1,20 +1,20 @@
-# Eureka Server
-The example is using Spring Cloud Hoxton SR3
+# Application Service with authenticated Eureka Server
+_The example is using Spring Cloud Hoxton SR3_
 
 ## Preparation
 - Gradle set up Spring Boot release trains plugin.
 - Manage the Spring Cloud dependencies with Maven BOM.
 
-## Dependenices
+## Dependencies
 ```groovy
 dependencies {
     implementation "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client"
 }
 ```
 ## Configuration
-There's no need to use _@EnableDiscoveryClient_ or _@EnableEurekaClient_ annotation since Spring Cloud Edgware.
+There's no need to use `@EnableDiscoveryClient` or `@EnableEurekaClient` annotation since Spring Cloud Edgware.
 
-register microservice to Eureka Server through _application.yml_
+register microservice to Eureka Server through `application.yml`
 ```yaml
 spring:
   application:
@@ -35,14 +35,18 @@ eureka:
 2. start up application-client-consumer-authenticating
 3. start up application-service-provider-authenticating
 
-[Login](http://localhost:8761) Eureka Server <br>
-Username:user <br>
-Password: password123
+## Authentication
+This example sets up the authentication for Eureka Server. The auth info as follows:
 
-The application-service-provider would create 4 user and the id is 1~4.
+| username | password |
+|---|---|
+| user | password123 |
 
+[Login](http://localhost:8761) Eureka Server.
+
+# How to Test
 call API on application-client-consumer threw curl command:
 ```shell script
-# curl curl -X GET http://{username}:{password}@{application_server_url}:{application_server_port}/order/users/{user_id}
-curl -X GET http://user:password1234@localhost:8010/order/users/1
+# curl -X GET http://{username}:{password}@{application_server_url}:{application_server_port}/order/users/{user_id}
+curl -X GET http://user:password1234@localhost:8000/order/users/1
 ```

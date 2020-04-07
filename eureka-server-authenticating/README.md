@@ -1,5 +1,5 @@
-# Eureka Server
-The example is using Spring Cloud Hoxton SR3
+# Eureka Server Authentication
+_The example is using Spring Cloud Hoxton SR3_
 
 ## Preparation
 - Gradle set up Spring Boot release trains plugin.
@@ -11,7 +11,7 @@ It needs to add service name in /hosts file to support localhost HA.
 127.0.0.1 peer1 peer2
 ```
 
-## Dependenices
+## Dependencies
 ```groovy
 dependencies {
     implementation "org.springframework.boot:spring-boot-starter-web"
@@ -20,7 +20,7 @@ dependencies {
 }
 ```
 ## Configuration
-Use _@EnableEurekaServer_ annotation on main class.
+Use `@EnableEurekaServer` annotation on main class.
 ```java
 @SpringBootApplication
 @EnableEurekaServer
@@ -42,7 +42,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 }
 ```
 
-setup the server configuration through _application.yml_
+setup the server configuration through `application.yml`
 ```yaml
 spring:
   application:
@@ -60,14 +60,19 @@ Use Spring Security to do the authentication. To prevent that someone might send
 2. start up application-client-consumer-authenticating
 3. start up application-service-provider-authenticating
 
+## Authenticated Users
+The application-service-provider would create 2 auth users as follows:
+
+| username | password |
+|---|---|
+| user | password1 |
+| admin | password2 |
+
 [Login](http://localhost:8761) Eureka Server <br>
-Username:user <br>
-Password: password123
 
-The application-service-provider would create 4 user and the id is 1~4.
-
+# How to Test
 call API on application-client-consumer threw curl command:
 ```shell script
-# curl curl -X GET http://{username}:{password}@{application_server_url}:{application_server_port}/order/users/{user_id}
+# curl -X GET http://{username}:{password}@{application_server_url}:{application_server_port}/order/users/{user_id}
 curl -X GET http://user:password1234@localhost:8010/order/users/1
 ```

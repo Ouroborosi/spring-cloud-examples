@@ -35,8 +35,7 @@ public class ConsumerController {
   @GetMapping("/users/{id}")
   public User findById(@PathVariable Long id) {
     final String url = "http://" + PROVIDER_INSTANCE_ID + "/users/{id}";
-    final User user = this.restTemplate.getForObject(url, User.class, id);
-    return user;
+    return this.restTemplate.getForObject(url, User.class, id);
   }
 
   /**

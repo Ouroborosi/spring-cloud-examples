@@ -1,5 +1,5 @@
 # Service Provider with API Authentication
-The example is using Spring Cloud Hoxton SR3
+_The example is using Spring Cloud Hoxton SR3_
 
 Create secured API endpoint on the microservice.
 
@@ -7,7 +7,7 @@ Create secured API endpoint on the microservice.
 - Gradle set up Spring Boot release trains plugin.
 - Manage the Spring Cloud dependencies with Maven BOM.
 
-## Dependenices
+## Dependencies
 ```groovy
 dependencies {
     implementation "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client"
@@ -141,10 +141,13 @@ The application-service-provider would create 3 users.
 
 ## Authenticated Users
 The application-service-provider would create 2 auth users as follows:
+
 | username | password |
 |---|---|
 | user | password1 |
 | admin | password2 |
+
+[Login](http://localhost:8761) Eureka Server.
 
 # How to Test
 call API to check if the endpoint is available on application service:
