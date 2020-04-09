@@ -94,7 +94,6 @@ Again, do not add `@FeignClient` in the interface. Feign Clients has already cre
  * 
  */
 @RequestMapping("/users")
-@RestController
 public interface UserFeignClient {
     @GetMapping(value = "/{id}")
     User findById(@PathVariable Long id);

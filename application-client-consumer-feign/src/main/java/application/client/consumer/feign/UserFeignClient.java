@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @FeignClient(name = ServiceProviderConfig.PROVIDER_INSTANCE_ID)
 @RequestMapping("/users")
-@RestController
 public interface UserFeignClient {
     @GetMapping(value = "/{id}")
     User findById(@PathVariable Long id);

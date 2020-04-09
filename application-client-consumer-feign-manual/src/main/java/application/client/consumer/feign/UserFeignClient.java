@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RequestMapping("/users")
-@RestController
 public interface UserFeignClient {
     @GetMapping(value = "/{id}")
     User findById(@PathVariable Long id);
