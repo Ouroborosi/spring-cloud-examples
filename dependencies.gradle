@@ -1,6 +1,7 @@
 ext {
     def springCloudVersion = "Hoxton.SR3"
     def feignHttpClientVersion = "10.7.4"
+    def feignFormVersion = "3.8.0"
 
     mavenBomDependencies = [
             springCloudDependenciesVersion:        "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
@@ -23,7 +24,9 @@ ext {
             eurekaClientVersion:                   "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client",
             ribbonVersion:                         "org.springframework.cloud:spring-cloud-starter-netflix-ribbon",
             openFeignVersion:                      "org.springframework.cloud:spring-cloud-starter-openfeign",
-            feignHttpClientVersion:                "io.github.openfeign:feign-httpclient:${feignHttpClientVersion}"
+            feignHttpClientVersion:                "io.github.openfeign:feign-httpclient:${feignHttpClientVersion}",
+            feignFormVersion:                      "io.github.openfeign.form:feign-form:${feignFormVersion}",
+            feignFormSpringVersion:                "io.github.openfeign.form:feign-form-spring:${feignFormVersion}"
     ]
 
     eurekaServerDependencies = [

@@ -1,0 +1,13 @@
+dependencies {
+    implementation applicationClientConsumerDependencies.spingBootStarterWebVersion
+    implementation applicationClientConsumerDependencies.spingBootStarterActuatorVersion
+    implementation applicationClientConsumerDependencies.eurekaClientVersion
+    implementation applicationClientConsumerDependencies.openFeignVersion
+    implementation applicationClientConsumerDependencies.feignFormVersion
+    implementation applicationClientConsumerDependencies.feignFormSpringVersion
+    compileOnly applicationClientConsumerDependencies.lombokVersion
+    annotationProcessor applicationClientConsumerDependencies.lombokVersion
+}
+
+// Define the main class for the application
+mainClassName = 'application.client.consumer.App'

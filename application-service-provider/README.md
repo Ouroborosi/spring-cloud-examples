@@ -45,7 +45,7 @@ The application-service-provider would create 3 users.
 | 3 | account3 | John | 32 | 280.00 |
 
 # How to Test
-call API on application-client-consumer threw curl command:
+call API on application client threw curl command:
 ```shell script
 # curl -X GET http://{application_server_url}:{application_server_port}/order/users/{user_id}
 curl -X GET http://localhost:8010/order/users/1

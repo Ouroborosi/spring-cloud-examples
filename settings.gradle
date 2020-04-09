@@ -17,4 +17,5 @@ include 'application-service-provider',
         'application-client-consumer-feign-manual',
         'application-client-consumer-feign-with-multiple-params',
         'application-service-provider-with-multiple-params',
-        'application-client-consumer-feign-with-multiple-params-and-interceptor'
+        'application-client-consumer-feign-with-multiple-params-and-interceptor',
+        'application-client-consumer-feign-upload-file'
