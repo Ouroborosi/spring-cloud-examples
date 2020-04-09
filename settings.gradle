@@ -14,4 +14,7 @@ include 'application-service-provider',
         'application-client-consumer-feign-java-config',
         'application-client-consumer-feign-property-config',
         'application-service-provider-with-api-auth',
-        'application-client-consumer-feign-manual'
+        'application-client-consumer-feign-manual',
+        'application-client-consumer-feign-with-multiple-params',
+        'application-service-provider-with-multiple-params',
+        'application-client-consumer-feign-with-multiple-params-and-interceptor'
