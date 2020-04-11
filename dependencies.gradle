@@ -26,7 +26,8 @@ ext {
             openFeignVersion:                      "org.springframework.cloud:spring-cloud-starter-openfeign",
             feignHttpClientVersion:                "io.github.openfeign:feign-httpclient:${feignHttpClientVersion}",
             feignFormVersion:                      "io.github.openfeign.form:feign-form:${feignFormVersion}",
-            feignFormSpringVersion:                "io.github.openfeign.form:feign-form-spring:${feignFormVersion}"
+            feignFormSpringVersion:                "io.github.openfeign.form:feign-form-spring:${feignFormVersion}",
+            hystrixVersion:                        "org.springframework.cloud:spring-cloud-starter-netflix-hystrix"
     ]
 
     eurekaServerDependencies = [
