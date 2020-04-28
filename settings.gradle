@@ -19,4 +19,7 @@ include 'application-service-provider',
         'application-service-provider-with-multiple-params',
         'application-client-consumer-feign-with-multiple-params-and-interceptor',
         'application-client-consumer-feign-upload-file',
-        'application-client-consumer-hystrix'
+        'application-client-consumer-hystrix',
+        'zuul-server',
+        'file-service-upload',
+        'zuul-server-customizing-filter'

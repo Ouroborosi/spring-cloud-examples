@@ -1,0 +1,7 @@
+dependencies {
+    implementation applicationClientConsumerDependencies.spingBootStarterWebVersion
+    implementation applicationClientConsumerDependencies.eurekaClientVersion
+}
+
+// Define the main class for the application
+mainClassName = 'application.file.upload.App'

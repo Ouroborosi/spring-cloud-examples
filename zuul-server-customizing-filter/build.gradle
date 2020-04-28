@@ -1,0 +1,13 @@
+plugins {
+    id 'groovy'
+}
+
+dependencies {
+    implementation zuulDependencies.spingBootStarterWebVersion
+    implementation zuulDependencies.eurekaClientVersion
+    implementation zuulDependencies.zuulVersion
+    implementation zuulDependencies.groovyVersion
+}
+
+// Define the main class for the application
+mainClassName = 'application.client.consumer.App'

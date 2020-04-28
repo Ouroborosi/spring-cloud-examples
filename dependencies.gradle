@@ -2,37 +2,50 @@ ext {
     def springCloudVersion = "Hoxton.SR3"
     def feignHttpClientVersion = "10.7.4"
     def feignFormVersion = "3.8.0"
+    def groovyVersion = "2.3.11"
 
     mavenBomDependencies = [
-            springCloudDependenciesVersion:        "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+            springCloudDependenciesVersion:         "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
     ]
 
     applicationServiceProviderDependencies = [
-            spingBootStarterWebVersion:            "org.springframework.boot:spring-boot-starter-web",
-            spingBootStarterActuatorVersion:       "org.springframework.boot:spring-boot-starter-actuator",
-            springBootStarterJPAVersion:           "org.springframework.boot:spring-boot-starter-data-jpa",
-            springBootStarterSecurityVersion:      "org.springframework.boot:spring-boot-starter-security",
-            h2DatabaseVersion:                     "com.h2database:h2",
-            lombokVersion:                         "org.projectlombok:lombok",
-            eurekaClientVersion:                   "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client"
+            spingBootStarterWebVersion:             "org.springframework.boot:spring-boot-starter-web",
+            spingBootStarterActuatorVersion:        "org.springframework.boot:spring-boot-starter-actuator",
+            springBootStarterJPAVersion:            "org.springframework.boot:spring-boot-starter-data-jpa",
+            springBootStarterSecurityVersion:       "org.springframework.boot:spring-boot-starter-security",
+            h2DatabaseVersion:                      "com.h2database:h2",
+            lombokVersion:                          "org.projectlombok:lombok",
+            eurekaClientVersion:                    "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client"
     ]
 
     applicationClientConsumerDependencies = [
-            spingBootStarterWebVersion:            "org.springframework.boot:spring-boot-starter-web",
-            spingBootStarterActuatorVersion:       "org.springframework.boot:spring-boot-starter-actuator",
-            lombokVersion:                         "org.projectlombok:lombok",
-            eurekaClientVersion:                   "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client",
-            ribbonVersion:                         "org.springframework.cloud:spring-cloud-starter-netflix-ribbon",
-            openFeignVersion:                      "org.springframework.cloud:spring-cloud-starter-openfeign",
-            feignHttpClientVersion:                "io.github.openfeign:feign-httpclient:${feignHttpClientVersion}",
-            feignFormVersion:                      "io.github.openfeign.form:feign-form:${feignFormVersion}",
-            feignFormSpringVersion:                "io.github.openfeign.form:feign-form-spring:${feignFormVersion}",
-            hystrixVersion:                        "org.springframework.cloud:spring-cloud-starter-netflix-hystrix"
+            spingBootStarterWebVersion:             "org.springframework.boot:spring-boot-starter-web",
+            spingBootStarterActuatorVersion:        "org.springframework.boot:spring-boot-starter-actuator",
+            lombokVersion:                          "org.projectlombok:lombok",
+            eurekaClientVersion:                    "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client",
+            ribbonVersion:                          "org.springframework.cloud:spring-cloud-starter-netflix-ribbon",
+            openFeignVersion:                       "org.springframework.cloud:spring-cloud-starter-openfeign",
+            feignHttpClientVersion:                 "io.github.openfeign:feign-httpclient:${feignHttpClientVersion}",
+            feignFormVersion:                       "io.github.openfeign.form:feign-form:${feignFormVersion}",
+            feignFormSpringVersion:                 "io.github.openfeign.form:feign-form-spring:${feignFormVersion}",
+            hystrixVersion:                         "org.springframework.cloud:spring-cloud-starter-netflix-hystrix"
     ]
 
     eurekaServerDependencies = [
-            spingBootStarterWebVersion:            "org.springframework.boot:spring-boot-starter-web",
-            springBootStarterSecurityVersion:      "org.springframework.boot:spring-boot-starter-security",
-            eurekaServerVersion:                   "org.springframework.cloud:spring-cloud-starter-netflix-eureka-server"
+            spingBootStarterWebVersion:             "org.springframework.boot:spring-boot-starter-web",
+            springBootStarterSecurityVersion:       "org.springframework.boot:spring-boot-starter-security",
+            eurekaServerVersion:                    "org.springframework.cloud:spring-cloud-starter-netflix-eureka-server"
+    ]
+
+    zuulDependencies = [
+            spingBootStarterWebVersion:             "org.springframework.boot:spring-boot-starter-web",
+            eurekaClientVersion:                    "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client",
+            zuulVersion:                            "org.springframework.cloud:spring-cloud-starter-netflix-zuul",
+            groovyVersion:                          "org.codehaus.groovy:groovy-all:${groovyVersion}"
+    ]
+
+    fileUploadService = [
+            spingBootStarterWebVersion:             "org.springframework.boot:spring-boot-starter-web",
+            eurekaClientVersion:                    "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client"
     ]
 }
