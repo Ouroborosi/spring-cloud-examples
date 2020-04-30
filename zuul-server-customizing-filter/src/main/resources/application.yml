@@ -15,6 +15,9 @@ management:
     health:
       show-details: always
 
+logging:
+  level.root: INFO
+
 eureka:
   client:
     service-url:
@@ -23,9 +26,3 @@ eureka:
   instance:
     # register IP address on eureka server (default is false, and will register host name instead)
     prefer-ip-address: true
-
-hystrix.command.default.isolation.thread.timeoutInMilliseconds: 60000
-
-ribbon:
-  ConnectTimeout: 3000
-  ReadTimeout: 6000

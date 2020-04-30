@@ -2,7 +2,7 @@ ext {
     def springCloudVersion = "Hoxton.SR3"
     def feignHttpClientVersion = "10.7.4"
     def feignFormVersion = "3.8.0"
-    def groovyVersion = "2.3.11"
+    def groovyVersion = "3.0.3"
 
     mavenBomDependencies = [
             springCloudDependenciesVersion:         "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
@@ -41,6 +41,7 @@ ext {
             spingBootStarterWebVersion:             "org.springframework.boot:spring-boot-starter-web",
             eurekaClientVersion:                    "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client",
             zuulVersion:                            "org.springframework.cloud:spring-cloud-starter-netflix-zuul",
+            lombokVersion:                          "org.projectlombok:lombok",
             groovyVersion:                          "org.codehaus.groovy:groovy-all:${groovyVersion}"
     ]
 

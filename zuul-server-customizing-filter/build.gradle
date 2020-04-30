@@ -7,7 +7,9 @@ dependencies {
     implementation zuulDependencies.eurekaClientVersion
     implementation zuulDependencies.zuulVersion
     implementation zuulDependencies.groovyVersion
+    compileOnly zuulDependencies.lombokVersion
+    annotationProcessor zuulDependencies.lombokVersion
 }
 
 // Define the main class for the application
-mainClassName = 'application.client.consumer.App'
+mainClassName = 'application.gateway.zuul.App'
